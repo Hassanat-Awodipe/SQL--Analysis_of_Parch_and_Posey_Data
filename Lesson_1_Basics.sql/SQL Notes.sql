@@ -1,0 +1,14 @@
+SELECT #pick the columns you want 
+
+FROM #to pick the table where the columns are
+
+LIMIT #to indicate the first set of number of rows you are interested in. It is always the last query 
+in the set of commands.
+
+* means to pick every table in a database or every columns in a table
+
+; indicates the end of your query
+
+ORDERBY #used to sort the data in a column. Use DESC to sort in descending order as the default
+sorting style is in ascending order.
+
