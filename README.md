@@ -1,4 +1,4 @@
 # Analysis_of_Parch_and_Posey_Data
 
-Learning SQL with Udacity.
-These questions asked in the SQL
+
+The above folders contain my solutions to exercises in the SQL course with Udacity
