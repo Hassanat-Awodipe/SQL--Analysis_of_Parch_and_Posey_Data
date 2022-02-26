@@ -117,7 +117,6 @@ WITH sales AS (SELECT a.name acc_name, SUM(total_amt_usd) total_sales
               ORDER BY 2 DESC
               LIMIT 10 )
 
+/*get the average*/
 SELECT AVG(total_sales)
 FROM sales
-
-/*get the average*/
