@@ -16,7 +16,7 @@ and last names for the primary_poc.*/
 /*table for first name*/
 SELECT primary_poc,
             	     POSITION(' ' IN primary_poc) AS space_position,
-                   LEFT(primary_poc,  POSITION(' ' IN primary_poc)) AS first_name
+                   LEFT(primary_poc,  POSITION(' ' IN primary_poc) - 1) AS first_name
 FROM accounts
 
 /*get positon for last_name*/
