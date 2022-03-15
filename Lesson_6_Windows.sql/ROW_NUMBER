@@ -1,0 +1,36 @@
+--Example
+/*--assign row number to each row based on month but partition by account_id and do not skip ranks
+SELECT id,
+		account_id,
+		DATE_TRUNC('month', occurred_at) AS month,
+		DENSE_RANK() OVER (PARTITION BY account_id ORDER BY DATE_TRUNC('month', occurred_at)) AS row_num
+FROM orders
+
+--assign row number to each row based on month but partition by account_id. Do not repeat the ranks
+SELECT id,
+		account_id,
+		DATE_TRUNC('month', occurred_at) AS month,
+		RANK() OVER (PARTITION BY account_id ORDER BY DATE_TRUNC('month', occurred_at)) AS row_num
+FROM orders
+
+--assign row number to each row based on time of occurred_at but partition by account_id
+SELECT id,
+		account_id,
+		occurred_at,
+		ROW_NUMBER() OVER (PARTITION BY account_id ORDER BY occurred_at) AS row_num
+FROM orders
+
+--assign row number to each row based on occurred_at
+SELECT id,
+		account_id,
+		occurred_at,
+		ROW_NUMBER() OVER (ORDER BY occurred_at) AS row_num
+FROM orders 
+*/
+
+
+--1. Select the id, account_id, and total variable from the orders table, then create a column called total_rank that ranks this total amount of paper ordered (from highest to lowest) for each account using a partition. Your final table should have these four columns.
+SELECT id,
+		account_id,
+		RANK () OVER (PARTITION BY account_id ORDER BY total DESC) as total_rank
+FROM orders
