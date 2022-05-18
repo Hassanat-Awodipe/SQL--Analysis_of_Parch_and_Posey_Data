@@ -3,10 +3,10 @@ for standard paper for each order. Limit the results to the first 10 orders, and
 include the id and account_id fields.*/
 
 SELECT id,
-				account_id,
-				standard_amt_usd,
+	account_id,
+	standard_amt_usd,
         standard_qty,
-				standard_amt_usd/standard_qty AS unit_price
+	standard_amt_usd/standard_qty AS unit_price
 FROM orders
 LIMIT 10;
 
@@ -19,7 +19,7 @@ limit your calculations to the first 10 orders, as we did in question #1, and yo
 that causes the problem.*/
 
 SELECT id,
-			account_id,
-   		poster_amt_usd/(standard_amt_usd + gloss_amt_usd + poster_amt_usd) AS post_per
+	account_id,
+   	poster_amt_usd/(standard_amt_usd + gloss_amt_usd + poster_amt_usd) AS post_per
 FROM orders
 LIMIT 10;
