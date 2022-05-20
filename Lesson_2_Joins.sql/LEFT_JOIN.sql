@@ -6,7 +6,7 @@ the region name, the sales rep name, and the account name. Sort the accounts alp
 (A-Z) according to account name.*/
 
 SELECT r.name regionName,
-				s.name salesName,
+	s.name salesName,
         a.name accountName
 FROM region r
 JOIN sales_reps s
@@ -22,7 +22,7 @@ Your final table should include three columns: the region name, the sales rep na
 Sort the accounts alphabetically (A-Z) according to account name.*/
 
 SELECT r.name regionName,
-				s.name salesName,
+	s.name salesName,
         a.name accountName
 FROM region r
 JOIN sales_reps s
@@ -38,7 +38,7 @@ Your final table should include three columns: the region name, the sales rep na
 Sort the accounts alphabetically (A-Z) according to account name.*/
 
 SELECT r.name regionName,
-			s.name salesName,
+	s.name salesName,
         a.name accountName
 FROM region r
 JOIN sales_reps s
@@ -54,8 +54,8 @@ quantity exceeds 100. Your final table should have 3 columns: region name, accou
 Inorder to avoid a division by zero error, adding .01 to the denominator here is helpful total_amt_usd/(total+0.01).*/
 
 SELECT r.name regionName,
-			a.name accountName,
-			o.total_amt_usd/(o.total + 0.01) unitprice
+	a.name accountName,
+	o.total_amt_usd/(o.total + 0.01) unitprice
 FROM  region r
 JOIN sales_reps s
 ON r.id = s.region_id
@@ -115,7 +115,10 @@ WHERE a.id = 1001;
 /*8.) Find all the orders that occurred in 2015. Your final table should have 4 columns: occurred_at, account name,
 order total, and order total_amt_usd.*/
 
-SELECT o.occurred_at, a.name, o.total, o.total_amt_usd
+SELECT o.occurred_at,
+	a.name,
+	o.total,
+	o.total_amt_usd
 FROM orders o
 LEFT JOIN accounts a
 ON a.id = o.account_id
