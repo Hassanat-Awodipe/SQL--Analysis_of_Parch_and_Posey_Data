@@ -9,8 +9,8 @@ ON accounts.id = orders.id
 and the primary_poc from the accounts table.*/
 
 SELECT accounts.name,
-			orders.standard_qty,
-			orders.gloss_qty, 
+	orders.standard_qty,	
+	orders.gloss_qty, 
     	orders.poster_qty,
     	accounts.website,
     	accounts.primary_poc
