@@ -1,5 +1,5 @@
-1.) Use DISTINCT to test if there are any accounts associated with more than one region.
-NO
+--1.) Use DISTINCT to test if there are any accounts associated with more than one region.
+--NO
 
 SELECT DISTINCT a.name acc_name, 
 		r.name region_name,
@@ -12,14 +12,14 @@ ON r.id = s.region_id
 GROUP BY acc_name, region_name
 ORDER BY acc_name
 
-OR
+--OR
 
 SELECT DISTINCT id, name
 FROM accounts;
 
 
-2.) Have any sales reps worked on more than one account?
-YES
+--2.) Have any sales reps worked on more than one account?
+--YES
 
 SELECT DISTINCT s.name rep_name,
 	 a.name acc_name,
@@ -30,7 +30,7 @@ ON a.sales_rep_id = s.id
 GROUP BY rep_name, acc_name
 ORDER BY rep_name
 
-OR
+--OR
 
 SELECT DISTINCT id, name
 FROM sales_reps;
