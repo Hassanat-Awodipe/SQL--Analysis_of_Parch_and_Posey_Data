@@ -1,4 +1,4 @@
-SUB QUERY STEPS: EXAMPLE
+--SUB QUERY STEPS: EXAMPLE
 
 --1.) Use the test environment below to find the number of events that occur for each day for each channel.
 
