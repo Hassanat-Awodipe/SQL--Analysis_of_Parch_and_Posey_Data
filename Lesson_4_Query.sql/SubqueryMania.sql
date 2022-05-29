@@ -105,15 +105,15 @@ JOIN region r
 ON r.id = s.region_id
 GROUP BY r.name
 HAVING SUM(o.total_amt_usd) = (
-															SELECT MAX(max_sum_sales) max_sales
-															 FROM (SELECT r.name region_name,
-																	 					SUM(o.total_amt_usd) max_sum_sales
-																		FROM orders o
-																		JOIN accounts a
-																		ON a.id = o.account_id
-																		JOIN sales_reps s
-																		ON s.id = a.sales_rep_id
-																		JOIN region r
-																		ON r.id = s.region_id
-																		GROUP BY 1) t1
+				SELECT MAX(max_sum_sales) max_sales
+				 FROM (SELECT r.name region_name,
+						SUM(o.total_amt_usd) max_sum_sales
+					FROM orders o
+					JOIN accounts a
+					ON a.id = o.account_id
+					JOIN sales_reps s
+					ON s.id = a.sales_rep_id
+					JOIN region r
+					ON r.id = s.region_id
+					GROUP BY 1) t1
 															 )
