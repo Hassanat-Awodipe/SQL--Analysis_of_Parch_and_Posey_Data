@@ -9,13 +9,13 @@ FROM orders
 --order then pull the average for each type of paper qty in this month.
 
 SELECT account_id,
-			standard_qty,
-			poster_qty,
-			gloss_qty
+	standard_qty,
+	poster_qty,
+	gloss_qty
 FROM ORDERS
 WHERE DATE_TRUNC('month', occurred_at) =
-																				(SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
-																				FROM orders)
+					(SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
+						FROM orders)
 
 
 --3.) Find the total amount spent on all orders on the first month that any order was placed in the orders table (in terms of usd)
