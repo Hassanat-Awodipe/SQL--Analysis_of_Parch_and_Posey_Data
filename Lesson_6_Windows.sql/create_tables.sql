@@ -49,6 +49,8 @@ CREATE TABLE orders(
 	FOREIGN KEY (account_id) REFERENCES accounts(id)
 );
 
+-- populate tables with CSV files
+
 SELECT *
 FROM region;
 
