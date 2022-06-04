@@ -1,5 +1,5 @@
 --Example
-/*SELECT id,
+/* SELECT id,
 		account_id,
 		standard_qty,
 		DATE_TRUNC('month', occurred_at) AS month,
@@ -25,6 +25,6 @@ SELECT id,
        MAX(standard_qty) OVER (PARTITION BY account_id) AS max_std_qty
 FROM orders
 
-/*Without the ORDER BY clause, a partition is formed for each account_id but the rows are not sorted within the 
+/* Without the ORDER BY clause, a partition is formed for each account_id but the rows are not sorted within the 
 partition. So the aggregates remain constant across all rows for the same account_id since there is no sorting 
-condition that is usually specified with the ORDER BY clause.*/
+condition that is usually specified with the ORDER BY clause. */
