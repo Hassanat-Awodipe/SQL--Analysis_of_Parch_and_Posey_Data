@@ -1,6 +1,6 @@
 --we need to understand all the orders that are received every day.
---we could do all these in one big query but we can also aggregate in small queries then joing the subauerirs to get relevant data
---one big query
+--we could do all these in one big query but we can also aggregate in small queries then joining the subquerirs to get relevant data
+--with one big query
 
 SELECT DATE_TRUNC('day', o.occurred_at) AS date,
 		COUNT(DISTINCT a.sales_rep_id) AS active_sales_reps, --count distinct so that the sales reps are not counted twice
