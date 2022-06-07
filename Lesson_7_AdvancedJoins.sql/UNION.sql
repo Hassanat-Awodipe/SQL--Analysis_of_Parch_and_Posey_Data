@@ -24,16 +24,16 @@ name it double_accounts. Then do a COUNT the number of times a name appears in t
 this correctly, your query results should have a count of 2 for each name.*/
 
 WITH double_accounts AS (SELECT *
-						FROM accounts
+			FROM accounts
 
-						UNION ALL
+			UNION ALL
 
-						SELECT *
-						FROM accounts
-						)
+			SELECT *
+			FROM accounts
+			)
 
 SELECT name,
-		COUNT(*)
+	COUNT(*)
 FROM double_accounts
 GROUP BY 1
 ORDER BY 2 DESC;
