@@ -13,9 +13,8 @@ SELECT account_id,
 	poster_qty,
 	gloss_qty
 FROM ORDERS
-WHERE DATE_TRUNC('month', occurred_at) =
-					(SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
-						FROM orders)
+WHERE DATE_TRUNC('month', occurred_at) = (SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
+					  FROM orders)
 
 
 --3.) Find the total amount spent on all orders on the first month that any order was placed in the orders table (in terms of usd)
@@ -25,6 +24,5 @@ SELECT AVG(standard_qty) avg_stan,
 	AVG(gloss_qty)avg_gloss,
     	SUM(total_amt_usd)
 FROM ORDERS
-WHERE DATE_TRUNC('month', occurred_at) =
-	(SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
-	FROM orders)
+WHERE DATE_TRUNC('month', occurred_at) = (SELECT DATE_TRUNC('month', MIN(occurred_at)) AS month
+				       	FROM orders)
